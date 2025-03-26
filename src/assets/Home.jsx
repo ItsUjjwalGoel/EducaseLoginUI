@@ -1,30 +1,40 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Register from './Register';
 import Login from './Login';
+
 function Home() {
     const navigate = useNavigate();
-    return (
-        <>
-            <div className='w-lvw h-lvh flex justify-center'>
-                <div className=''></div>
-                <div className='w-[400px] bg-gray-100'>
-                    <div className='h-4/6'></div>
-                    <div className=''>
-                        <div className='pl-5 font-semibold text-3xl' >Welcome to Popx</div>
-                        <div className='pl-6 pt-1 w-[75%] text-gray-400 font-semibold '>Lorem, ipsum dolor sit amet,
-                            consectetur adipisicing elit.</div>
-                        <button className='w-full'
-                            onClick={() => { navigate('/register') }}> <div className='mt-2 ml-2 mr-2  bg-[#7B3FF6] hover:bg-[#5b15e8] text-white font-semibold text-center py-3 rounded-lg cursor-pointer'> Create Account</div></button>
-                        <button className='w-full'
-                            onClick={() => { navigate('/login') }}> <div className='mt-2 ml-2 mr-2 bg-[#D0A8FF] hover:bg-[#ac70f0] font-semibold text-center py-3 rounded-lg cursor-pointer'> Already Registered?Login</div></button>
-                    </div>
 
+    return (
+        <div className='min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gray-50'>
+            <div className='w-full h-lvh max-w-md p-6 bg-white rounded-lg shadow-md'>
+                <div className='h-3/5'>
                 </div>
-                <div className=''></div>
+
+                <div className='text-center mt-6'>
+                    <h1 className='text-3xl font-semibold'>Welcome to Popx</h1>
+                    <p className='text-gray-500 mt-2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+
+                <div className='mt-6 space-y-4'>
+                    <button 
+                        className='w-full bg-[#7B3FF6] hover:bg-[#5b15e8] text-white font-semibold py-3 rounded-lg cursor-pointer'
+                        onClick={() => navigate('/register')}
+                    >
+                        Create Account
+                    </button>
+
+                    <button 
+                        className='w-full bg-[#D0A8FF] hover:bg-[#ac70f0] text-black font-semibold py-3 rounded-lg cursor-pointer'
+                        onClick={() => navigate('/login')}
+                    >
+                        Already Registered? Login
+                    </button>
+                </div>
             </div>
-        </>)
+        </div>
+    );
 }
 
-export default Home
+export default Home;
